@@ -31,9 +31,17 @@ class TasksController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'content' => ' required|max:255' ,
+            'status' => ' required|max:255' ,
+        ]);
         $task = new Task;
+        
         $task->content = $request->content;
+        $task->status = $request->status;
         $task->save();
+        
+        return view('tasks.show', ['task' => $task]);
     }
 
     /**
@@ -61,6 +69,7 @@ class TasksController extends Controller
     {
         $task = Task::findOrFail($id);
         $task->content = $request->content;
+        $task->status = $request->status;
         $task->save();
         
         return view('tasks.show', ['task' => $task]);

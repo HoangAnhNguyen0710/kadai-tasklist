@@ -16,7 +16,8 @@
 
     <t>
         <th> Task </th>
-        <td> {{ $task->content}} </td>
+        <td> Content: {{ $task->content}} </td>
+        <td> Status: {{ $task->status}} </td>
         </tr>
 </table>
 <a class="btn btn-outline" href=" {{ route('tasks.edit', $task->id) }} ">Edit this task </a>
