@@ -5,7 +5,7 @@
         <h2 class="text-lg" >Edit task for id: {{ $task->id}}</h2>
     </div>
     <div class="flex justify-center" >
-        <form action="{{ route('tasks.update') }}" class="w-1/2" >
+        <form action="{{ route('tasks.update', $task->id) }}" class="w-1/2" >
              @csrf
              @method('PUT')
                 <div class="form-control my-4">

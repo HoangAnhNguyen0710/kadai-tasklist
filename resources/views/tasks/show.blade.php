@@ -6,7 +6,7 @@
     <h2> Task detail page for id = {{ $task->id}} </h2>
 </div>
 
-
+<!--<div>user id: {{ $task->user_id}}</div>-->
 <table class="table w-full my-4">
     <tr>
         <th> id </th>
